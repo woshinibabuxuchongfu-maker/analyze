@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>足球比赛分析</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body data-sport="football">
+    <header class="app-header">
+      <h1>足球比赛分析</h1>
+      <p class="subtitle">输入数据，调用模型分析，结果显示在页面下方</p>
+    </header>
+    <nav class="top-nav">
+      <a href="index.html">首页</a>
+      <a class="active" href="football.html">足球</a>
+      <a href="basketball.html">篮球</a>
+      <a href="history.html">历史</a>
+      <a href="search.html">搜索</a>
+    </nav>
+
+    <main class="container">
+      <section class="card" id="section-input">
+        <h2>数据输入与模型分析（足球）</h2>
+        <div class="row">
+          <div class="col">
+            <label for="temperature">温度</label>
+            <input id="temperature" type="number" min="0" max="1" step="0.1" value="0.3" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="textInputWrap">
+            <label for="dataText">数据文本</label>
+            <textarea id="dataText" placeholder="请输入纯文本比赛资料，例如：
+主队近期赛程密集，轮换不足；客队防线稳定，定位球威胁较大。"></textarea>
+          </div>
+          
+        </div>
+        <div class="actions">
+          <button id="analyzeBtn" class="primary">开始分析</button>
+          <span class="hint">无后端时可在链接加上 ?mock=1 使用本地模拟</span>
+        </div>
+      </section>
+
+      <section class="card" id="section-result">
+        <h2>分析结果</h2>
+        <div id="resultPanel" class="result-panel muted">尚无结果，请在上方提交分析。</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>历史记录独立在“历史”页面查看。</span>
+    </footer>
+
+    <script src="assets/api.js?v=20251113"></script>
+    <script src="assets/analyze.js?v=20251113"></script>
+  </body>
+  </html>

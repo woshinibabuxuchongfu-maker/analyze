@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>体育比赛分析（足球/篮球）</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>吐槽与交流</h1>
+      <p class="subtitle">把不爽都说出来吧；后端上线后会智能回复与安慰</p>
+    </header>
+    <nav class="top-nav">
+      <a class="active" href="index.html">首页</a>
+      <a href="football.html">足球</a>
+      <a href="basketball.html">篮球</a>
+      <a href="history.html">历史</a>
+      <a href="search.html">搜索</a>
+    </nav>
+
+    <main class="container">
+      <section class="card">
+        <div id="chatLog" class="chat-log">
+          <div class="msg bot">
+            <div class="bubble">嗨，我在这儿倾听。哪场比赛让你抓狂了吗？</div>
+            <div class="meta">系统 · 准备好了</div>
+          </div>
+        </div>
+        <div class="chat-input">
+          <textarea id="chatInput" placeholder="尽情吐槽：比如裁判判罚、临门一脚、最后一攻..." rows="2"></textarea>
+          <button id="chatSend" class="primary">发送</button>
+          <button id="chatClear" class="secondary">清空</button>
+        </div>
+        <p class="hint">提示：当前为本地预览，默认使用模拟回复；接入后端后将由模型生成共情与建议。</p>
+      </section>
+
+      <section id="chat-history" class="card">
+        <div class="tabs">
+          <button class="tab active" data-tab="timeline">时间线</button>
+          <button class="tab" data-tab="sessions">会话</button>
+          <div class="spacer"></div>
+          <button id="history-refresh" class="secondary">刷新</button>
+        </div>
+        <div class="tab-panels">
+          <div id="panel-timeline" class="panel active">
+            <div id="timeline-list" class="list"></div>
+            <div class="pager">
+              <button id="tl-prev" class="secondary">上一页</button>
+              <span id="tl-page-info" class="small muted"></span>
+              <button id="tl-next" class="secondary">下一页</button>
+            </div>
+          </div>
+          <div id="panel-sessions" class="panel">
+            <div id="session-list" class="list"></div>
+            <div class="pager">
+              <button id="ss-prev" class="secondary">上一页</button>
+              <span id="ss-page-info" class="small muted"></span>
+              <button id="ss-next" class="secondary">下一页</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>本页用于收集用户吐槽与反馈，便于后端生成安慰/建议。</span>
+    </footer>
+
+    <script src="assets/api.js"></script>
+    <script src="assets/chat.js"></script>
+    <script src="assets/chat-history.js"></script>
+  </body>
+  </html>

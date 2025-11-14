@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>预测结果与准确率</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>预测结果与准确率</h1>
+      <p class="subtitle">汇总足球与篮球的比分、大小球、让分等预测结果</p>
+    </header>
+    <nav class="top-nav">
+      <a href="index.html">首页</a>
+      <a href="football.html">足球</a>
+      <a href="basketball.html">篮球</a>
+      <a href="history.html">历史</a>
+      <a href="search.html">搜索</a>
+      <a class="active" href="accuracy.html">准确率</a>
+    </nav>
+
+    <main class="container">
+      <section class="card">
+        <div class="actions">
+          <button id="refreshBtn" class="primary">刷新预测结果</button>
+          <span class="hint">使用后端数据生成摘要</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>足球预测</h2>
+        <div id="footballPanel" class="result-panel muted">暂无数据</div>
+      </section>
+
+      <section class="card">
+        <h2>篮球预测</h2>
+        <div id="basketballPanel" class="result-panel muted">暂无数据</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>提示：预测结果来源于后端分析记录。</span>
+    </footer>
+
+    <script src="assets/api.js"></script>
+    <script src="assets/accuracy.js"></script>
+  </body>
+  </html>

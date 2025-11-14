@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>在线搜索与分析</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>在线搜索与分析</h1>
+      <p class="subtitle">输入关键词或链接，调用模型结合网络数据进行分析</p>
+    </header>
+    <nav class="top-nav">
+      <a href="index.html">首页</a>
+      <a href="football.html">足球</a>
+      <a href="basketball.html">篮球</a>
+      <a href="history.html">历史</a>
+      <a class="active" href="search.html">搜索</a>
+    </nav>
+
+    <main class="container">
+      <section class="card">
+        <div class="row">
+          <div class="col">
+            <label for="query">关键词或链接</label>
+            <input id="query" type="text" placeholder="例如：英超 阿森纳 最近伤病；或粘贴新闻链接" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="searchModelId">模型标识（火山引擎）</label>
+            <input id="searchModelId" type="text" value="volcengine/generic-llm" />
+          </div>
+          <div class="col">
+            <label for="searchTemperature">温度</label>
+            <input id="searchTemperature" type="number" min="0" max="1" step="0.1" value="0.2" />
+          </div>
+        </div>
+        <div class="actions">
+          <button id="searchBtn" class="primary">搜索并分析</button>
+          <span class="hint">本地开发默认走模拟，可用 ?mock=0 连接后端</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>分析结果</h2>
+        <div id="searchResult" class="result-panel muted">尚无结果</div>
+      </section>
+
+      <section class="card">
+        <h2>相关网页</h2>
+        <div id="searchHits" class="result-panel muted">暂无搜索结果</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>提示：真实环境建议由后端执行检索与去重，前端仅展示。</span>
+    </footer>
+
+    <script src="assets/api.js"></script>
+    <script src="assets/search.js"></script>
+  </body>
+  </html>
